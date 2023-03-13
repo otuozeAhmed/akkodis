@@ -88,4 +88,4 @@ note: contact data is stored in contacts.sqlite3 automatically
 
 Solutions to the first and second sections can be
 found in section_one.txt and section_two.txt respectively.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------
