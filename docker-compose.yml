@@ -10,14 +10,6 @@ services:
     volumes:    
       - .:/app  
 
-  process_monitor:  
-    container_name: process_monitor 
-    build:
-      context: .
-      dockerfile: ./processMonitor/Dockerfile
-    volumes:    
-      - .:/app/processMonitor
-
   contact_book:  
     container_name: contact_book 
     build:

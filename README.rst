@@ -69,7 +69,13 @@ Process Monitor.
 
        make process.monitor
 
-note: process data is populated real-time in data.json
+Note: process data is populated real-time in data.json
+Typing in executable path can be daunting and not so user friendly,
+This solution does not require file/paths/to/executable,
+You can type the executable name alone and the program will
+automatically detect the executable path for you.
+e.g. you can type "chrome" or "firefox" on prompt 
+to monitor each process respectively.
  
 Contact Book.
 ~~~~~~~~~~~~~
@@ -79,3 +85,7 @@ Contact Book.
 
 note: contact data is stored in contacts.sqlite3 automatically
 
+
+Solutions to the first and second sections can be
+found in section_one.txt and section_two.txt respectively.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
