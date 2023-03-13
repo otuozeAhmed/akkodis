@@ -44,44 +44,37 @@ Clone the project
    .. code:: sh
 
         git clone https://github.com/otuozeAhmed/akkodis.git
-***
 
 not: open the the folder in a text editor or cd into it (akkodis) 
 
-**Start it.**
+Buid and start the containers.
 ~~~~~~~~~~~~~
 
    .. code:: sh
 
         make start
-***
 
-**Password Generator.**
+Password Generator.
 ~~~~~~~~~~~~~
 
    .. code:: sh
 
        make password.generate
 
-***
-
-**Process Monitor.**
+Process Monitor.
 ~~~~~~~~~~~~~
 
    .. code:: sh
 
        make process.monitor
 
-***
-
 note: process data is populated real-time in data.json
  
-**Contact Book.**
+Contact Book.
 ~~~~~~~~~~~~~
    .. code:: sh
 
        make contact.book
-***
 
-note: data is stored in contacts.sqlite3 automatically
+note: contact data is stored in contacts.sqlite3 automatically
 
