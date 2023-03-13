@@ -38,6 +38,17 @@ class ContactBook:
         """
         )
         self.conn.commit()
+        
+    @property
+    def id(self):
+        while True:
+            id = input("Enter Contact ID: ")
+            id_regex = re.compile(r'^[1-9]\d*$')
+            if not id_regex.match(id):
+                print("Invalid ID! Please try again...")
+                self.id
+            break
+        return id
 
     @property
     def name(self):
@@ -145,7 +156,7 @@ class ContactBook:
         )
         self.conn.commit()
         print()
-        print("Contact added successfully!")
+        print("201 Created: Contact added successfully!")
 
     def find_contact(self, id: int) -> tuple[int, str, str, str, str]:
         self.cursor.execute(
@@ -186,7 +197,7 @@ class ContactBook:
         # result = self.cursor.fetchone()
         else:
             print()
-            print(f"Contact with ID: {id} does not exist!")
+            print(f"Error 404: Contact with ID: {id} does not exist!")
             
 
     def list_contacts(self) -> list[tuple[int, str, str, str, str]]:
@@ -256,27 +267,26 @@ def main():
             app.add_contact(contact)
             print()
         elif choice == "2":
-            id = input("Enter Contact ID: ")
+            id = app.id
             result = app.find_contact(id)
             if result:
                 print()
-                print("1 contact found!")
+                print("200 OK: 1 contact found!")
                 app.get_queryset(result)
             else:
-                print("Contact not found!")
+                print()
+                print(f"404 Not Found: Contact with ID: {id} does not exist!")
             print()
         elif choice == "3":
             id = int(input("Enter contact id: "))
-            print()
-            name = app.update_name
-            address = app.update_address
-            phone = app.update_phone
-            email = app.update_email
-            print()
             old_contact = app.find_contact(id)
-            if not old_contact:
-                print("Contact not found.")
-            else:
+            if old_contact:
+                print()
+                name = app.update_name
+                address = app.update_address
+                phone = app.update_phone
+                email = app.update_email
+                print()
                 new_contact = IContact(
                     name if name else old_contact[1],
                     address if address else old_contact[2],
@@ -284,8 +294,29 @@ def main():
                     email if email else old_contact[4],
                 )
                 app.update_contact(id, new_contact)
+                print("200 OK")
                 print("Contact updated successfully.")
                 print()
+            else:
+                print()
+                print(f"404 Not Found: Contact with ID: {id} does not exist!")
+                print()
+            
+            # if not old_contact:
+            #     print("404 Not Found")
+            #     print("Contact does not exist!")
+            #     print()
+            # else:
+            #     new_contact = IContact(
+            #         name if name else old_contact[1],
+            #         address if address else old_contact[2],
+            #         phone if phone else old_contact[3],
+            #         email if email else old_contact[4],
+            #     )
+            #     app.update_contact(id, new_contact)
+            #     print("200 OK")
+            #     print("Contact updated successfully.")
+            #     print()
         elif choice == "4":
             id = input("Enter the id of the contact to delete: ")
             app.delete_contact(id)
@@ -293,11 +324,11 @@ def main():
         elif choice == "5":
             query = app.list_contacts()
             if query:
-                print("Contacts:")
+                print("200 OK: Contacts")
                 for qs in query:
                     app.get_queryset(qs)
             else:
-                print("No contacts found!")
+                print("404: No contacts found!")
             print()
         elif choice == "6":
             break
