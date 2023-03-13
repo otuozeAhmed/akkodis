@@ -8,6 +8,7 @@ You will need to have the following installed:
 
 - make - https://www.gnu.org/software/make/
 - Docker - https://www.docker.com/products/docker-desktop/
+- No third party library used - The Docker build will automatically install Python.
 
 This project requires **Docker 17.06+ CE**. 
 The current Docker version used for this project is **Docker 20.10.22 CE**. 
