@@ -69,9 +69,9 @@ Process Monitor.
 
        make process.monitor
 
-Note: process data is populated real-time in data.json
-Typing in executable path can be daunting and not so user friendly,
-This solution does not require file/paths/to/executable,
+Note: Process data is populated real-time in data.json,
+typing in executable path can be daunting and not so user friendly,
+so, this solution does not require file/paths/to/executable. 
 You can type the executable name alone and the program will
 automatically detect the executable path for you.
 e.g. you can type "chrome" or "firefox" on prompt 
