@@ -12,7 +12,6 @@ You will need to have the following installed:
 
 Note: Solutions to the first and second sections (multiple choice) can be
 found in section_one.txt and section_two.txt respectively.
-----------------------------------------------------------
 
 This project requires **Docker 17.06+ CE**. 
 The current Docker version used for this project is **Docker 20.10.22 CE**. 
