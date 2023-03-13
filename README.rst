@@ -20,12 +20,10 @@ Note
 
 - This project is provisioned for Linux and Mac OS only.
 
-- Ensure to append ``sudo`` to all commands if your Docker permission configs is not properly set
-Or if you always require sudo to execute docker commands.
+- Ensure to append ``sudo`` to all commands if your Docker permission configs is not properly set Or if you always require sudo to execute docker commands.
 
-This project requires **Docker 17.06+ CE**. 
-The current Docker version used for this project is **Docker 20.10.22 CE**. 
-I recommend Docker Stable, but Docker Edge should work as well.
+- This project requires **Docker 17.06+ CE**. The current Docker version used for this project is **Docker 20.10.22 CE**. 
+- I recommend Docker Stable, but Docker Edge should work as well.
 
 Directions to setup
 ~~~~~~~~~~~~~
