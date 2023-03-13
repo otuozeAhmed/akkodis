@@ -1,0 +1,144 @@
+1. What are the common built-in data types in Python?
+
+ - Basic data types in Pyton is categorized below:
+ => Numeric: This icludes integer (int), float (float) and complex values (a +ib)
+ => Boolean: This provides a truthy or falsy values for data manupilation. True
+    can be represented by any non-zero value, whereas False can be represented by 0.
+ => Sequence: A sequence is used to store multiple values in a variable in an 
+    organized an efficient way. sequences include; string (str),
+    range(range), list (list) and tuples (tuple).
+
+2. What are lists and tuples? What are the key differences between the two?
+
+ => Lists:  Python lists are used to store multiple items in a single variable.
+    Duplicate values are allowed in a list, and elements can be of different
+    types: i.e., you can have both numeric and string data in a Python list.
+
+ => Tuples: Tuples are used to store multiple items in a single variable. 
+    It is a read-only collection where data is ordered (zero-based indexing)
+    and unchangeable/immutable (items cannot be added, modified, removed).
+    Duplicate values are allowed in a tuple, and elements can be of different 
+    types, similar to lists. Tuples are used instead of lists when we wish
+    to store the data that should not be changed in the program.
+
+ ===> Key Differences:
+  
+ => Lists are mutable, tuples are not.
+ => Lists are less efficient when working with large datasets than tuples.
+    Tuples are faster and more performant. This is because Python does not 
+    need to allocate new memory when a tuple is created, as it does with lists.
+ => List are denoted by square brackets [] while tuples are with parentheses ().
+
+3. What is the use of self in Python?
+
+ => Self is a reference to the instance of a class. 
+    It is typically used as the first parameter in instance methods
+    to allow the method to access and modify the instance's attributes.
+
+    class Student:
+        def __init__(self, language):
+            self.language = language
+
+        def which_language(self):
+            return f"I love to write code in {self.language}"
+
+4. What is __init__?
+
+ => The __init__ is a special/magic method in Python that is called
+  automatically when an instance of a class is created.
+  Note that the __init__ is the entry point to all
+  instance created from such class. Therefore, all attributes or
+  computations in this definition applies to all instances of the class.
+
+5. What is break, continue and pass in Python?
+
+ => Break is a control flow statement used to terminate a running
+    a loop or conditionals at defined conditions being True.
+
+    for i in range(7):
+        if i % 3 == 2:
+            break
+        print(i)
+
+ => Continue statement allows you to skip a certain definition and 
+    continue executiong the rest portion of a loop or iteration.
+
+    for j in range(3, 15, 3):
+        if j == 6:
+            continue
+        print(j)
+
+6. Pass is a control flow statement that is used to render a statement dormant
+   without really doing anything and no errors are raised.
+
+   def is_prime(x: int):
+        pass
+    
+7. What is slicing in Python?
+
+ => Slicing is used to retrieve a certain portion from a sequence. 
+    It allows you to specify the range of indices to extract from the sequence.
+
+    word = "Hello Python"
+    slice operation on this variable includes;
+
+    word[0:4]
+    word[3:]
+    word[::2]
+    word[-5:-1]
+
+8. What are Dict and List comprehensions?
+
+ => Generally, a comprehension in Python is a concise and short form
+    of creating either a list or dictionary in a single line of code.
+
+    The pattern for list comprehension is shown below;
+    new_list = [expression for item in iterable if condition]
+
+    while that of dictionary is shown also;
+    new_dict = {key_expression: value_expression for item in iterable if condition}
+
+9. What is lambda in Python? Why is it used?
+
+ => Lamda functions are a juicy way of writing anonymous functions in Python.
+    A lambda function is a one-liner function that can take any number of
+    arguments but can only have one expression in its body.
+
+    format_name: str = lambda name: name.title()
+    print(format_name('elon musk'))
+
+10. How do you create a class in Python?
+
+ => In Python, one can create a class by starting with the keyword "class"
+    followed by the name class-name, conventionally in titlecase.
+    A class may have class attributes or methods.
+
+    class Program:
+
+        # class attributes
+        sensor_up: int = 1
+        sensor_down: int = 0
+
+        # class method
+        def retirve_state() -> str:
+            return f"sendor state is currently {sensor_up}"
+
+11. Write a Python function which takes a variable number of arguments.
+
+ => In Python, one can write a function of variable number of arguments
+    by using the keyword "*args". 
+    Note: args is just a standard convention adopted generally in the Python
+    ecosystem, you could use *var, *num etc. The asterisk is most important.
+
+    def show_count(*args: list[int]) -> None:
+        for i args:
+            print(args)
+
+12. Write a program, which takes a sequence of numbers and check if all numbers are unique.
+
+=> To implement this, the set data type is used to set the uniqueness of the dataset 
+   and then we compare the original length to its unique set counterpart
+
+    def check_unique(numbers: list[int]):
+        unique_numbers = set(numbers)
+        return len(numbers) == len(unique_numbers)
