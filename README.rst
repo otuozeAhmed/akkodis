@@ -10,17 +10,19 @@ You will need to have the following installed:
 - Docker - https://www.docker.com/products/docker-desktop/
 - No third party library used - The Docker build will automatically install Python.
 
-Note: Solutions to the first and second sections (multiple choice) can be
+FYI
+~~~~~~~~~~~~~
+Solutions to the first and second sections (multiple choice) can be
 found in section_one.txt and section_two.txt respectively.
 
 This project requires **Docker 17.06+ CE**. 
 The current Docker version used for this project is **Docker 20.10.22 CE**. 
 I recommend Docker Stable, but Docker Edge should work as well.
 
-**NOTE:** This project is provisioned for Linux and Mac OS only.
-
 Note
 ~~~~~~~~~~~~~
+
+- This project is provisioned for Linux and Mac OS only.
 
 - Ensure to append ``sudo`` to all commands if your Docker permission configs is not properly set
 Or if you always require sudo to execute docker commands 
