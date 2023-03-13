@@ -19,9 +19,8 @@ Note
 ~~~~~~~~~~~~~
 
 - This project is provisioned for Linux and Mac OS only.
-
 - Ensure to append ``sudo`` to all commands if your Docker permission configs is not properly set Or if you always require sudo to execute docker commands.
-
+- You should run all ``make`` commands described below on your local machinge, *not* from within a Virtual Machine, as these commands are meant to stand up a VM-like environment using Docker containers.
 - This project requires **Docker 17.06+ CE**. The current Docker version used for this project is **Docker 20.10.22 CE**. 
 - I recommend Docker Stable, but Docker Edge should work as well.
 

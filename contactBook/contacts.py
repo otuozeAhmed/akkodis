@@ -144,6 +144,7 @@ class ContactBook:
             (contact.name, contact.address, contact.phone, contact.email),
         )
         self.conn.commit()
+        print()
         print("Contact added successfully!")
 
     def find_contact(self, id: int) -> tuple[int, str, str, str, str]:
@@ -170,15 +171,23 @@ class ContactBook:
         self.conn.commit()
 
     def delete_contact(self, id: int) -> None:
-        self.cursor.execute(
-            """
-            DELETE FROM contacts
-            WHERE id=?
-        """,
-            (id,),
-        )
-        self.conn.commit()
-        print(f"Contact with ID={id} has been deleted successfully!")
+        self.cursor.execute("SELECT * FROM contacts WHERE id=?", (id,))
+        if self.cursor.fetchone():   
+            self.cursor.execute(
+                """
+                DELETE FROM contacts
+                WHERE id=?
+            """,
+                (id,),
+            )
+            self.conn.commit()
+            print()
+            print(f"Contact with ID: {id} has been deleted successfully!")
+        # result = self.cursor.fetchone()
+        else:
+            print()
+            print(f"Contact with ID: {id} does not exist!")
+            
 
     def list_contacts(self) -> list[tuple[int, str, str, str, str]]:
         self.cursor.execute(
@@ -193,7 +202,7 @@ class ContactBook:
     @classmethod
     def get_queryset(cls, qs):
         print()
-        print("id:", qs[0])
+        print("Id:", qs[0])
         print("Name:", qs[1])
         print("Address:", qs[2])
         print("Phone:", qs[3])
@@ -250,6 +259,7 @@ def main():
             id = input("Enter Contact ID: ")
             result = app.find_contact(id)
             if result:
+                print()
                 print("1 contact found!")
                 app.get_queryset(result)
             else:
