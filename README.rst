@@ -40,7 +40,14 @@ Clone the project
 
 not: open the the folder in a text editor or cd into it (akkodis) 
 
-Buid and start the containers.
+Buid the process monitor image seperately
+~~~~~~~~~~~~~
+
+   .. code:: sh
+
+        make build.process.image
+
+Buid and start the other containers.
 ~~~~~~~~~~~~~
 
    .. code:: sh
