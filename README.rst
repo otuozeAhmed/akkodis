@@ -27,9 +27,6 @@ Note
 Directions to setup
 ~~~~~~~~~~~~~
 
-Clone this project or download the zip file. You may also run online with ``Gitpod`` alternatively- 
-Get Gitpod here - https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki
-
 Clone the project
 ~~~~~~~~~~~~~~~~~
 
