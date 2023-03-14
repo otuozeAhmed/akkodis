@@ -32,7 +32,7 @@ Clone the project
 
         git clone https://github.com/otuozeAhmed/akkodis.git
 
-not: open the the folder in a text editor or cd into it (akkodis) 
+Note: Ensure to cd into the (akkodis) folder before running the upcoming commands
 
 Buid process image
 ~~~~~~~~~~~~~
