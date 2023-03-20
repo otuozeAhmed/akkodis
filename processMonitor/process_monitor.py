@@ -25,7 +25,7 @@ class ProcessMonitor(IData):
 
     @property
     def get_executable(self) -> str:
-        exec_error = "The executable name you entered is invalid!"
+        exec_error = "The executable name you entered is either invalid or not running!"
 
         while True:
             try:
